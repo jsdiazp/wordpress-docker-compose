@@ -50,8 +50,8 @@ docker compose up -d
 
 ### Request SSL certificate
 
-Run the following command and following the instructions:
-```
+ To enable HTTPS and get an SSL certificate for your site, run the following command and follow the instructions:
+ ```
 docker compose exec nginx -ti certbot
 ```
 
