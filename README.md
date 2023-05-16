@@ -2,7 +2,7 @@
 
 Simplify your WordPress development using Docker and Docker Compose.
 
-With this repository, you can benefit from the features of the following to enhance your WordPress site’s performance:
+With this repository, you can benefit from the features of the following tools to enhance your WordPress site’s performance and security:
 
 - [Nginx](https://hub.docker.com/_/nginx/) with [Certbot](https://certbot.eff.org/)
 - [Redis](https://hub.docker.com/_/redis/)
