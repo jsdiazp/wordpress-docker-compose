@@ -1,0 +1,88 @@
+version: "3.8"
+
+services:
+  db:
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress_01
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: aE&6^igLThHc
+    volumes:
+      - db:/var/lib/mysql
+    build:
+      context: .
+      dockerfile: ./mysql/Dockerfile
+    networks:
+      - sites
+
+  wordpress_01:
+    depends_on:
+      - db
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: st90I%y8isCf89q
+      WORDPRESS_DB_NAME: wordpress_01
+    volumes:
+      - wordpress_01:/var/www/html
+      - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./wordpress/php/wordpress_01.ini:/usr/local/etc/php/conf.d/wordpress_01.ini
+    build:
+      context: .
+      dockerfile: ./wordpress/Dockerfile
+    networks:
+      - sites
+
+  wordpress_02:
+    depends_on:
+      - db
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: aE&6^igLThHc
+      WORDPRESS_DB_NAME: wordpress_02
+    volumes:
+      - wordpress_02:/var/www/html
+      - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./wordpress/php/wordpress_02.ini:/usr/local/etc/php/conf.d/wordpress_02.ini
+    build:
+      context: .
+      dockerfile: ./wordpress/Dockerfile
+    networks:
+      - sites
+
+  nginx:
+    depends_on:
+      - wordpress_01
+      - wordpress_02
+    restart: always
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - wordpress_01:/var/www/wordpress_01
+      - wordpress_02:/var/www/wordpress_02
+      # - ../static_01:/var/www/static_01
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - sites
+
+  redis:
+    image: redis:alpine
+    restart: always
+    networks:
+      - sites
+
+volumes:
+  db:
+  letsencrypt:
+  wordpress_01:
+  wordpress_02:
+networks:
+  sites:
