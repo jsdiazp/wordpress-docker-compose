@@ -10,11 +10,21 @@ With this repository, you can benefit from the features of the following tools t
 
 Content:
 
+- [Requirements](#requirements)
 - [Pre-installation](#pre-installation)
 - [Installation](#installation)
 - [Post-installation](#post-installation)
   - [Request SSL certificate](#request-ssl-certificate)
   - [Enable Wordfence](#enable-wordfence)
+
+## Requirements
+
+Make sure you have the latest versions of Docker and Docker Compose; to do so, you can follow the instructions in the links below:
+
+- [Install Docker](https://docs.docker.com/get-docker/)
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+
 
 ## Pre-installation
 
