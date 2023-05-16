@@ -22,7 +22,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: st90I%y8isCf89q
+      WORDPRESS_DB_PASSWORD: aE&6^igLThHc
       WORDPRESS_DB_NAME: wordpress_01
     volumes:
       - wordpress_01:/var/www/html
@@ -56,7 +56,7 @@ services:
   nginx:
     depends_on:
       - wordpress_01
-      - wordpress_02
+      # - wordpress_02
     restart: always
     volumes:
       - letsencrypt:/etc/letsencrypt
@@ -85,6 +85,6 @@ volumes:
   db:
   letsencrypt:
   wordpress_01:
-  wordpress_02:
+  # wordpress_02:
 networks:
   sites:
