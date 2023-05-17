@@ -4,12 +4,14 @@ Simplify your WordPress development using Docker and Docker Compose.
 
 With this repository, you can benefit from the features of the following tools to enhance your WordPress site’s performance and security:
 
-- [Nginx](https://hub.docker.com/_/nginx/) with [Certbot](https://certbot.eff.org/)
-- [Redis](https://hub.docker.com/_/redis/)
 - [MariaDB](https://hub.docker.com/_/mariadb/)
+- [Nginx](https://hub.docker.com/_/nginx/) with [Certbot](https://certbot.eff.org/)
+- [PHP-FPM](https://www.php.net/manual/en/install.fpm.php)
+- [Redis](https://hub.docker.com/_/redis/)
 
 Content:
 
+- [WordPress Docker Compose](#wordpress-docker-compose)
 - [Requirements](#requirements)
 - [Pre-installation](#pre-installation)
 - [Installation](#installation)
