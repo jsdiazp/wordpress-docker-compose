@@ -11,7 +11,6 @@ With this repository, you can benefit from the features of the following tools t
 
 Content:
 
-- [WordPress Docker Compose](#wordpress-docker-compose)
 - [Requirements](#requirements)
 - [Pre-installation](#pre-installation)
 - [Installation](#installation)
