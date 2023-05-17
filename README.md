@@ -27,24 +27,24 @@ Content:
 
 2. Check that ports `80` and `443` are exposed and available for use.
 
-
 ## Pre-installation
 
 Clone this GitHub repository to your local machine:
-```
+```shell
 git pull https://github.com/jsdiazp/wordpress-docker-compose.git
 ```
 
 Navigate to the repository folder:
-```
+```shell
 cd wordpress-docker-compose
 ```
 
 Edit `wordpress-*.conf` file from the `nginx/conf.d` folder replacing the `server_name` attribute with your website domain and aliases.
 
 ## Installation
+
 Run the docker compose command to start the containers:
-```
+```shell
 docker compose up -d
 ```
 
@@ -53,7 +53,7 @@ docker compose up -d
 ### Request SSL certificate
 
 To enable HTTPS and get an SSL certificate for your site, run the following command and follow the instructions displayed:
- ```
+ ```shell
 docker compose exec nginx -ti certbot
 ```
 
@@ -64,6 +64,6 @@ docker compose exec nginx -ti certbot
 Install the [Wordfence Security](https://wordpress.org/plugins/wordfence/) plugin on your WordPress site.
 
 Enable the Wordfence firewall by uncommenting the following line in the `wordpress-*.ini` file from the `wordpress/php` folder. 
-```
+```nginx
 # auto_prepend_file = '/var/www/html/wordfence-waf.php'
 ```
