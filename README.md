@@ -24,7 +24,7 @@ Content:
 - [Install Docker](https://docs.docker.com/get-docker/)
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-2. Check that ports 80 and 443 are exposed and available for use.
+2. Check that ports `80` and `443` are exposed and available for use.
 
 
 ## Pre-installation
@@ -56,7 +56,7 @@ To enable HTTPS and get an SSL certificate for your site, run the following comm
 docker compose exec nginx -ti certbot
 ```
 
-**Note:** Make sure that the DNS A record for the domain and subdomains specified in the nginx server_name attribute point to the server on which you have installed this container orchestration.
+**Note:** Make sure that the `DNS A record` for the domain and subdomains specified in the nginx `server_name` attribute point to the `public IP` of the server on which you have installed this container orchestration.
 
 ### Enable Wordfence
 
