@@ -31,7 +31,7 @@ Content:
 
 Clone this GitHub repository to your local machine:
 ```shell
-git pull https://github.com/jsdiazp/wordpress-docker-compose.git
+git clone https://github.com/jsdiazp/wordpress-docker-compose.git
 ```
 
 Navigate to the repository folder:
