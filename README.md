@@ -21,11 +21,11 @@ Content:
 
 ## Requirements
 
-1. Make sure you have the latest versions of Docker Engine; to do so, you can follow the instructions in the links below:
+1. Make sure you have the latest versions of Docker Engine; to do so, you can follow the instructions in the link below:
 
-  [Install Docker Engine](https://docs.docker.com/engine/install/)
+[Install Docker Engine](https://docs.docker.com/engine/install/)
 
-1. Check that ports `80` and `443` are exposed and available for use.
+2. Check that ports `80` and `443` are exposed and available for use.
 
 ## Pre-installation
 
