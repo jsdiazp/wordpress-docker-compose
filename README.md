@@ -20,12 +20,12 @@ Content:
 
 ## Requirements
 
-1. Make sure you have the latest versions of Docker and Docker Compose; to do so, you can follow the instructions in the links below:
+1. Make sure you have the latest versions of Docker Desktop or Docker Engine; to do so, you can follow the instructions in the links below:
 
-- [Install Docker](https://docs.docker.com/get-docker/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [Install Docker Desktop](https://docs.docker.com/get-docker/)
+- [Install Docker Engine](https://docs.docker.com/engine/install/)
 
-2. Check that ports `80` and `443` are exposed and available for use.
+1. Check that ports `80` and `443` are exposed and available for use.
 
 ## Pre-installation
 
