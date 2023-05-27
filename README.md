@@ -21,7 +21,7 @@ Content:
 
 ## Requirements
 
-1. Make sure you have the latest versions of Docker Engine; to do so, you can follow the instructions in the link below:
+1. Make sure you have the latest version of Docker Engine; to do so, you can follow the instructions in the link below:
 
 [Install Docker Engine](https://docs.docker.com/engine/install/)
 
