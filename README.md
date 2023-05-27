@@ -22,7 +22,7 @@ Content:
 
 1. Make sure you have the latest versions of Docker Engine; to do so, you can follow the instructions in the links below:
 
-- [Install Docker Engine](https://docs.docker.com/engine/install/)
+  [Install Docker Engine](https://docs.docker.com/engine/install/)
 
 1. Check that ports `80` and `443` are exposed and available for use.
 
@@ -65,4 +65,10 @@ Install the [Wordfence Security](https://wordpress.org/plugins/wordfence/) plugi
 Enable the Wordfence firewall by uncommenting the following line in the `wordpress-*.ini` file from the `wordpress/php` folder. 
 ```nginx
 # auto_prepend_file = '/var/www/html/wordfence-waf.php'
+```
+
+### Enter MYSQL CLI
+
+```shell
+docker compose exec db -ti mysql -u root -p aE&6^igLThHc
 ```
