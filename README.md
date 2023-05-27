@@ -17,6 +17,7 @@ Content:
 - [Post-installation](#post-installation)
   - [Request SSL certificate](#request-ssl-certificate)
   - [Enable Wordfence](#enable-wordfence)
+  - [Enter MYSQL CLI](#enter-mysql-cli)
 
 ## Requirements
 
