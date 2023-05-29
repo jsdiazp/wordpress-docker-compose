@@ -68,7 +68,7 @@ Enable the Wordfence firewall by uncommenting the following line in the `wordpre
 # auto_prepend_file = '/var/www/html/wordfence-waf.php'
 ```
 
-Restart the Docker Compose project.
+Finally, restart the Docker Compose project.
 ```shell
 docker compose restart
 ```
