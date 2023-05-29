@@ -71,5 +71,5 @@ Enable the Wordfence firewall by uncommenting the following line in the `wordpre
 ### Enter MYSQL CLI
 
 ```shell
-docker compose exec db -ti mysql -u root -p aE&6^igLThHc
+docker compose exec -ti db mysql -u root --password="aE&6^igLThHc"
 ```
