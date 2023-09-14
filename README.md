@@ -17,7 +17,7 @@ Content:
 - [Post-installation](#post-installation)
   - [Request SSL certificate](#request-ssl-certificate)
   - [Enable Wordfence](#enable-wordfence)
-  - [Enter MYSQL CLI](#enter-mysql-cli)
+  - [Enter MariaDB CLI](#enter-mysql-cli)
 
 ## Requirements
 
@@ -73,8 +73,8 @@ Finally, restart the Docker Compose project.
 docker compose restart
 ```
 
-### Enter MYSQL CLI
+### Enter MariaDB CLI
 
 ```shell
-docker compose exec -ti db mysql -u root --password="aE&6^igLThHc"
+docker compose exec -ti db mariadb -u root --password="aE&6^igLThHc"
 ```
