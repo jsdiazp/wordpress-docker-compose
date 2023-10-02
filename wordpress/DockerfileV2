@@ -9,7 +9,7 @@ ENV LC_ALL en_US.UTF-8
 RUN apt update && apt -y full-upgrade && apt -y dist-upgrade && apt -y autoremove && apt -y autoclean
 
 # Installing packages
-RUN for i in zsh neovim bat fzf fd-find exa git locales; do apt install -y $i; done
+RUN for i in zsh neovim bat fzf fd-find git locales; do apt install -y $i; done
 
 # Installing oh-my-zsh
 RUN rm -rf ~/.oh-my-zsh \

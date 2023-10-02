@@ -27,6 +27,11 @@ Content:
 
 2. Check that ports `80` and `443` are exposed and available for use.
 
+3. Update DB root password
+```shell
+echo "your_password" >secrets/db_root_password.txt
+```
+
 ## Pre-installation
 
 Clone this GitHub repository to your local machine:
@@ -76,5 +81,5 @@ docker compose restart
 ### Enter MariaDB CLI
 
 ```shell
-docker compose exec -ti db mariadb -u root --password="aE&6^igLThHc"
+docker compose exec -ti db mariadb -u root --password="$(<secrets/db_root_password.txt)"
 ```

@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_DATABASE: wordpress_01
       MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: aE&6^igLThHc
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
     volumes:
       - db:/var/lib/mysql
     build:
@@ -14,6 +14,8 @@ services:
       dockerfile: ./mysql/Dockerfile
     networks:
       - sites
+    secrets:
+      - db_root_password
 
   wordpress_01:
     depends_on:
@@ -22,7 +24,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: aE&6^igLThHc
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_root_password
       WORDPRESS_DB_NAME: wordpress_01
     volumes:
       - wordpress_01:/var/www/html
@@ -33,6 +35,8 @@ services:
       dockerfile: ./wordpress/Dockerfile
     networks:
       - sites
+    secrets:
+      - db_root_password
 
   # wordpress_02:
   #   depends_on:
@@ -41,7 +45,7 @@ services:
   #   environment:
   #     WORDPRESS_DB_HOST: db:3306
   #     WORDPRESS_DB_USER: root
-  #     WORDPRESS_DB_PASSWORD: aE&6^igLThHc
+  #     WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_root_password
   #     WORDPRESS_DB_NAME: wordpress_02
   #   volumes:
   #     - wordpress_02:/var/www/html
@@ -81,10 +85,15 @@ services:
     networks:
       - sites
 
+secrets:
+  db_root_password:
+    file: secrets/db_root_password.txt
+
 volumes:
   db:
   letsencrypt:
   wordpress_01:
   # wordpress_02:
+
 networks:
   sites:

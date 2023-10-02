@@ -9,7 +9,7 @@ ENV LC_ALL en_US.UTF-8
 RUN apk update && apk upgrade
 
 # Installing packages
-RUN for i in zsh neovim git zsh-vcs exa fzf starship; do apk add --quiet $i; done
+RUN for i in zsh neovim git zsh-vcs fzf starship; do apk add --quiet $i; done
 
 # Installing oh-my-zsh
 RUN rm -rf ~/.oh-my-zsh \
