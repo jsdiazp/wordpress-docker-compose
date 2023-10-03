@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
   db:
@@ -29,6 +29,7 @@ services:
     volumes:
       - wordpress_01:/var/www/html
       - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./wordpress/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
       - ./wordpress/php/wordpress_01.ini:/usr/local/etc/php/conf.d/wordpress_01.ini
     build:
       context: .
@@ -50,6 +51,7 @@ services:
   #   volumes:
   #     - wordpress_02:/var/www/html
   #     - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+  #     - ./wordpress/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
   #     - ./wordpress/php/wordpress_02.ini:/usr/local/etc/php/conf.d/wordpress_02.ini
   #   build:
   #     context: .
