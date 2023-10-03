@@ -58,6 +58,8 @@ services:
   #     dockerfile: ./wordpress/Dockerfile
   #   networks:
   #     - sites
+  #   secrets:
+  #       - db_root_password
 
   nginx:
     depends_on:
