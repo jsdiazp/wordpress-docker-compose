@@ -59,7 +59,7 @@ services:
   #   networks:
   #     - sites
   #   secrets:
-  #       - db_root_password
+  #     - db_root_password
 
   nginx:
     depends_on:
