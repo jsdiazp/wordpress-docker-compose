@@ -17,17 +17,17 @@ Content:
 - [Post-installation](#post-installation)
   - [Request SSL certificate](#request-ssl-certificate)
   - [Enable Wordfence](#enable-wordfence)
-  - [Enter MariaDB CLI](#enter-mysql-cli)
+  - [Enter MariaDB CLI](#enter-mariadb-cli)
 
 ## Requirements
 
-1. Make sure you have the latest version of Docker Engine; to do so, you can follow the instructions in the link below:
-
+1. Make sure you have the latest version of Docker Engine; to do so, you can follow the instructions in the link below:\
 [Install Docker Engine](https://docs.docker.com/engine/install/)
 
 2. Check that ports `80` and `443` are exposed and available for use.
 
 3. Update DB root password
+
 ```shell
 echo "your_password" >secrets/db_root_password.txt
 ```
@@ -35,11 +35,13 @@ echo "your_password" >secrets/db_root_password.txt
 ## Pre-installation
 
 Clone this GitHub repository to your local machine:
+
 ```shell
 git clone https://github.com/jsdiazp/wordpress-docker-compose.git
 ```
 
 Navigate to the repository folder:
+
 ```shell
 cd wordpress-docker-compose
 ```
@@ -49,6 +51,7 @@ Edit `wordpress-*.conf` file from the `nginx/conf.d` folder replacing the `serve
 ## Installation
 
 Run the docker compose command to start the containers:
+
 ```shell
 docker compose up -d
 ```
@@ -58,6 +61,7 @@ docker compose up -d
 ### Request SSL certificate
 
 To enable HTTPS and get an SSL certificate for your site, run the following command and follow the instructions displayed:
+
  ```shell
 docker compose exec nginx -ti certbot
 ```
@@ -68,12 +72,14 @@ docker compose exec nginx -ti certbot
 
 Install the [Wordfence Security](https://wordpress.org/plugins/wordfence/) plugin on your WordPress site.
 
-Enable the Wordfence firewall by uncommenting the following line in the `wordpress-*.ini` file from the `wordpress/php` folder. 
+Enable the Wordfence firewall by uncommenting the following line in the `wordpress-*.ini` file from the `wordpress/php` folder.
+
 ```nginx
 # auto_prepend_file = '/var/www/html/wordfence-waf.php'
 ```
 
 Finally, restart the Docker Compose project.
+
 ```shell
 docker compose restart
 ```
