@@ -1,4 +1,4 @@
-FROM wordpress:php8.2-fpm-alpine
+FROM wordpress:php8.3-fpm-alpine
 
 # Set system-wide locale settings
 ENV LANG en_US.UTF-8
