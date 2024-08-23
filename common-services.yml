@@ -1,0 +1,19 @@
+services:
+  wordpress:
+    depends_on:
+      - db
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_root_password
+    volumes:
+      - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./wordpress/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+    build:
+      context: .
+      dockerfile: ./wordpress/Dockerfile
+    networks:
+      - sites
+    secrets:
+      - db_root_password

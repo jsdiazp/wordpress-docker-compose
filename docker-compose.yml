@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   db:
     restart: unless-stopped
@@ -18,48 +16,24 @@ services:
       - db_root_password
 
   wordpress_01:
-    depends_on:
-      - db
-    restart: unless-stopped
+    extends:
+      file: ./common-services.yml
+      service: wordpress
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_root_password
       WORDPRESS_DB_NAME: wordpress_01
     volumes:
       - wordpress_01:/var/www/html
-      - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ./wordpress/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
       - ./wordpress/php/wordpress_01.ini:/usr/local/etc/php/conf.d/wordpress_01.ini
-    build:
-      context: .
-      dockerfile: ./wordpress/Dockerfile
-    networks:
-      - sites
-    secrets:
-      - db_root_password
 
   # wordpress_02:
-  #   depends_on:
-  #     - db
-  #   restart: unless-stopped
+  #   extends:
+  #     file: ./common-services.yml
+  #     service: wordpress
   #   environment:
-  #     WORDPRESS_DB_HOST: db:3306
-  #     WORDPRESS_DB_USER: root
-  #     WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_root_password
   #     WORDPRESS_DB_NAME: wordpress_02
   #   volumes:
   #     - wordpress_02:/var/www/html
-  #     - ./wordpress/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-  #     - ./wordpress/php/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
   #     - ./wordpress/php/wordpress_02.ini:/usr/local/etc/php/conf.d/wordpress_02.ini
-  #   build:
-  #     context: .
-  #     dockerfile: ./wordpress/Dockerfile
-  #   networks:
-  #     - sites
-  #   secrets:
-  #     - db_root_password
 
   nginx:
     depends_on:
