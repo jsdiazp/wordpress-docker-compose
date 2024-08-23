@@ -16,7 +16,7 @@ RUN apk add bash
 COPY scripts/shell.sh /shell.sh
 RUN /bin/bash /shell.sh --alpine
 
-# Installing certbot
+# Install certbot
 RUN apk add certbot certbot-nginx
 
 # Cron
