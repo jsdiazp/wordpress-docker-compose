@@ -1,3 +1,5 @@
+# macOS
 .DS_Store
-DockerfileV2
-haproxy/
+
+# VIM
+*.un~
