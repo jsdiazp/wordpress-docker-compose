@@ -167,6 +167,9 @@ install_zsh_extras() {
     log "Failed to install Starship prompt" false true "ERROR"
     exit 1
   fi
+
+  # Install Zoxide
+  add_zshrc_code "Zoxide" "eval \"\$(zoxide init zsh)\""
 }
 
 # Main script
