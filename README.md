@@ -63,7 +63,7 @@ docker compose up -d
 To enable HTTPS and get an SSL certificate for your site, run the following command and follow the instructions displayed:
 
  ```shell
-docker compose exec nginx -ti certbot
+docker compose exec -ti nginx certbot
 ```
 
 **Note:** Make sure that the `DNS A record` for the domain and subdomains specified in the nginx `server_name` attribute point to the `public IP` of the server on which you have installed this container orchestration.
