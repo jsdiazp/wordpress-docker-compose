@@ -38,6 +38,7 @@ install_alpine_packages() {
     fzf
     git
     neovim
+    zoxide
     zsh
     zsh-vcs
   )
@@ -76,6 +77,7 @@ install_debian_packages() {
     git
     locales
     neovim
+    zoxide
     zsh
   )
   for pkg in "${packages[@]}"; do
